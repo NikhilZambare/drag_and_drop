@@ -1,0 +1,215 @@
+<section class="mt-5"> 
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body" 
+          #periodicalList="cdkDropList"
+          cdkDropList
+          cdkDropListOrientation="vertical"
+          [cdkDropListData]="periodicals"
+          [cdkDropListConnectedTo]="[yearlyList, halfYearlyList, threeTimesYearlyList, quarterlyList, sixTimeInyearList, asRequiredList, hallwaysOnRotationList, naList]"
+          (cdkDropListDropped)="drop($event)">
+            <h5 class="card-title">PERIODICALS</h5>
+              <div class="btn-drag"  *ngFor="let periodical of periodicals;">
+                <button class="mb-2 drag-text" cdkDrag>
+                  {{periodical}}
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt-5"> 
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">FREQUENCY</h5>
+            <div class="row">
+              <div class="col-md-3 col-sm-6 mb-3 grab_me main_drop_box">
+                <div class="card drop_card"
+                #yearlyList="cdkDropList"
+                cdkDropList
+                cdkDropListOrientation="vertical"
+                [cdkDropListData]="yearlys"
+                [cdkDropListConnectedTo]="[halfYearlyList, threeTimesYearlyList, quarterlyList, sixTimeInyearList, asRequiredList, hallwaysOnRotationList, naList]"
+                (cdkDropListDropped)="drop($event)">
+                  <div class="h6 text-center text-uppercase card-header" style="background-color: rgb(87, 36, 126); color: white;">
+                    YEARLY
+                  </div>
+                  <div class="drop_inner_card"><span><span>
+                    <div class="card-block card-inner">
+                      <div class="btn-drag"  *ngFor="let yearly of yearlys;">
+                        <button class="mb-2 drag-text" cdkDrag>
+                          {{yearly}}
+                        </button>
+                      </div>
+                    </div></span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-3 grab_me main_drop_box">
+                <div class="card drop_card"
+                #halfYearlyList="cdkDropList"
+                  cdkDropList
+                  cdkDropListOrientation="vertical"
+                  [cdkDropListData]="halfYearlys"
+                  [cdkDropListConnectedTo]="[yearlyList,threeTimesYearlyList, quarterlyList, sixTimeInyearList, asRequiredList, hallwaysOnRotationList, naList]"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="h6 text-center text-uppercase card-header" style="background-color: rgb(87, 36, 126); color: white;">
+                  HALF YEARLY
+                  </div>
+                  <div class="drop_inner_card" ><span><span>
+                    <div class="card-block card-inner">
+                      <div class="btn-drag"  *ngFor="let halfyearly of halfYearlys;">
+                        <button class="mb-2 drag-text" cdkDrag>
+                          {{halfyearly}}
+                        </button>
+                      </div>
+                    </div></span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-3 grab_me main_drop_box">
+                <div class="card drop_card"
+                  #threeTimesYearlyList="cdkDropList"
+                  cdkDropList
+                  cdkDropListOrientation="vertical"
+                  [cdkDropListData]="threeTimeInyears"
+                  [cdkDropListConnectedTo]="[yearlyList, halfYearlyList, quarterlyList, sixTimeInyearList, asRequiredList, hallwaysOnRotationList, naList]"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="h6 text-center text-uppercase card-header" style="background-color: rgb(87, 36, 126); color: white;">
+                    3 TIMES A YEAR
+                  </div>
+                  <div class="drop_inner_card" ><span><span>
+                    <div class="card-block card-inner">
+                      <div class="btn-drag"  *ngFor="let threeTimeInyear of threeTimeInyears;">
+                        <button class="mb-2 drag-text" cdkDrag>
+                          {{threeTimeInyear}}
+                        </button>
+                      </div>
+                    </div></span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-3 grab_me main_drop_box">
+                <div class="card drop_card"
+                  #quarterlyList="cdkDropList"
+                  cdkDropList
+                  cdkDropListOrientation="vertical"
+                  [cdkDropListData]="quarterlys"
+                  [cdkDropListConnectedTo]="[yearlyList, halfYearlyList, threeTimesYearlyList, sixTimeInyearList, asRequiredList, hallwaysOnRotationList, naList]"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="h6 text-center text-uppercase card-header" style="background-color: rgb(87, 36, 126); color: white;">
+                    QUARTERLY
+                  </div>
+                  <div class="drop_inner_card" ><span><span>
+                    <div class="card-block card-inner">
+                      <div class="btn-drag"  *ngFor="let quarterly of quarterlys;">
+                        <button class="mb-2 drag-text" cdkDrag>
+                          {{quarterly}}
+                        </button>
+                      </div>
+                    </div></span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-3 grab_me main_drop_box">
+                <div class="card drop_card"
+                  #sixTimeInyearList="cdkDropList"
+                  cdkDropList
+                  cdkDropListOrientation="vertical"
+                  [cdkDropListData]="sixTimeInyears"
+                  [cdkDropListConnectedTo]="[yearlyList, halfYearlyList, threeTimesYearlyList, quarterlyList, asRequiredList, hallwaysOnRotationList, naList]"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="h6 text-center text-uppercase card-header" style="background-color: rgb(87, 36, 126); color: white;">
+                    6 TIMES A YEAR
+                  </div>
+                  <div class="drop_inner_card" ><span><span>
+                    <div class="card-block card-inner">
+                      <div class="btn-drag"  *ngFor="let sixTimeInyear of sixTimeInyears;">
+                        <button class="mb-2 drag-text" cdkDrag>
+                          {{sixTimeInyear}}
+                        </button>
+                      </div>
+                    </div></span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-3 grab_me main_drop_box">
+                <div class="card drop_card"
+                  #asRequiredList="cdkDropList"
+                  cdkDropList
+                  cdkDropListOrientation="vertical"
+                  [cdkDropListData]="asRequired"
+                  [cdkDropListConnectedTo]="[yearlyList, halfYearlyList, threeTimesYearlyList, quarterlyList, sixTimeInyearList, hallwaysOnRotationList, naList]"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="h6 text-center text-uppercase card-header" style="background-color: rgb(87, 36, 126); color: white;">
+                    AS REQUIRED
+                  </div>
+                  <div class="drop_inner_card" ><span><span>
+                    <div class="card-block card-inner">
+                      <div class="btn-drag"  *ngFor="let required of asRequired;">
+                        <button class="mb-2 drag-text" cdkDrag>
+                          {{required}}
+                        </button>
+                      </div>
+                    </div></span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-3 grab_me main_drop_box">
+                <div class="card drop_card"
+                  #hallwaysOnRotationList="cdkDropList"
+                  cdkDropList
+                  cdkDropListOrientation="vertical"
+                  [cdkDropListData]="hallwaysOnRotations"
+                  [cdkDropListConnectedTo]="[yearlyList, halfYearlyList, threeTimesYearlyList, quarterlyList, sixTimeInyearList, asRequiredList, naList]"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="h6 text-center text-uppercase card-header" style="background-color: rgb(87, 36, 126); color: white;">
+                    HALLWAYS ON ROTATION
+                  </div>
+                  <div class="drop_inner_card" ><span><span>
+                    <div class="card-block card-inner">
+                      <div class="btn-drag"  *ngFor="let hallwaysOnRotation of hallwaysOnRotations;">
+                        <button class="mb-2 drag-text" cdkDrag>
+                          {{hallwaysOnRotation}}
+                        </button>
+                      </div>
+                    </div></span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-3 grab_me main_drop_box">
+                <div class="card drop_card"
+                  #naList="cdkDropList"
+                  cdkDropList
+                  cdkDropListOrientation="vertical"
+                  [cdkDropListData]="nas"
+                  [cdkDropListConnectedTo]="[yearlyList, halfYearlyList, threeTimesYearlyList, quarterlyList, sixTimeInyearList, asRequiredList, hallwaysOnRotationList]"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="h6 text-center text-uppercase card-header" style="background-color: rgb(87, 36, 126); color: white;">
+                    NA
+                  </div>
+                  <div class="drop_inner_card" ><span><span>
+                    <div class="card-block card-inner">
+                      <div class="btn-drag"  *ngFor="let na of nas;">
+                        <button class="mb-2 drag-text" cdkDrag>
+                          {{na}}
+                        </button>
+                      </div>
+                    </div></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
